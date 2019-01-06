@@ -4,29 +4,33 @@
 <context>
     <name>CoverPage</name>
     <message>
-        <source>My Cover</source>
+        <source>Binary Fun</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>FirstPage</name>
     <message>
-        <source>Show Page 2</source>
+        <source>Yeeha!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Leaderboard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Binary Fun</source>
         <translation type="unfinished"></translation>
     </message>
-</context>
-<context>
-    <name>SettingsPage</name>
     <message>
-        <source>Nested Page</source>
+        <source>Play again!</source>
         <translation type="unfinished"></translation>
     </message>
+</context>
+<context>
+    <name>LeaderBoard</name>
     <message>
-        <source>Item</source>
+        <source>Under Construction!</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

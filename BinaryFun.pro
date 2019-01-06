@@ -25,7 +25,7 @@ DISTFILES += qml/BinaryFun.qml \
     rpm/BinaryFun.yaml \
     translations/*.ts \
     BinaryFun.desktop \
-    qml/pages/SettingsPage.qml
+    qml/pages/LeaderBoard.qml
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 

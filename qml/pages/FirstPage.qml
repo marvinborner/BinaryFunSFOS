@@ -31,7 +31,7 @@ Page {
         console.log("Correct rows:" + JSON.stringify(correctRows));
 
         if (Object.keys(correctRows).every(function(k){ return correctRows[k] })) {
-            gameover.text = "Yeeha!";
+            gameover.text = qsTr("Yeeha!");
             newGameBtn.visible = true;
             timer.stop()
         }
@@ -62,8 +62,8 @@ Page {
 
         PullDownMenu {
             MenuItem {
-                text: qsTr("Show Page 2")
-                onClicked: pageStack.push(Qt.resolvedUrl("SettingsPage.qml"))
+                text: qsTr("Leaderboard")
+                onClicked: pageStack.push(Qt.resolvedUrl("LeaderBoard.qml"))
             }
         }
 
@@ -178,7 +178,7 @@ Page {
 
             Button {
                 id: newGameBtn
-                text: "New Game!"
+                text: qsTr("Play again!")
                 visible: false
                 anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: newGame()
@@ -191,7 +191,7 @@ Page {
 
             Label {
                 id: timerLabel
-                text: "0"
+                text: "0.0"
                 anchors.horizontalCenter: parent.horizontalCenter
             }
 
@@ -200,7 +200,7 @@ Page {
                 interval: 10
                 running: true
                 repeat: true
-                onTriggered: timerLabel.text = (parseInt(timerLabel.text) + 1) / 100
+                onTriggered: timerLabel.text = (parseFloat(timerLabel.text) + 0.01).toFixed(2).toString()
             }
         }
     }

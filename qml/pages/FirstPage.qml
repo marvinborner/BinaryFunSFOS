@@ -22,12 +22,24 @@ Page {
         pads[row][index] = checked ? "1" : "0";
         const typedBinary = parseInt(pads[row].join(""));
         const neededBinary = parseInt(dec2bin(eval("rand_" + row).text));
-        correctRows[row.toString()] = typedBinary === neededBinary;
-        console.log(JSON.stringify(correctRows));
-        if (Object.keys(correctRows).every(function(k){ return correctRows[k] }))
+        const isCorrect = typedBinary === neededBinary;
+        correctRows[row.toString()] = isCorrect;
+
+        if (isCorrect) eval("rand_" + row).color = "green";
+        else eval("rand_" + row).color = "white";
+
+        console.log("Correct rows:" + JSON.stringify(correctRows));
+
+        if (Object.keys(correctRows).every(function(k){ return correctRows[k] })) {
             gameover.text = "Yeeha!";
-        else
+            newGameBtn.visible = true;
+            timer.stop()
+        }
+        else {
             gameover.text = "";
+            newGameBtn.visible = false;
+            timer.start()
+        }
     }
 
     function dec2bin(dec){
@@ -36,6 +48,10 @@ Page {
 
     function getRandom() {
         return Math.floor(Math.random() * 16);
+    }
+
+    function newGame() {
+        pageStack.push(Qt.resolvedUrl("FirstPage.qml"))
     }
 
     id: page
@@ -53,7 +69,7 @@ Page {
 
         contentHeight: column.height
 
-        Column {          
+        Column {
             id: column
             width: page.width
             spacing: Theme.paddingLarge
@@ -160,8 +176,31 @@ Page {
                 }
             }
 
+            Button {
+                id: newGameBtn
+                text: "New Game!"
+                visible: false
+                anchors.horizontalCenter: parent.horizontalCenter
+                onClicked: newGame()
+            }
+
             Label {
                 id: gameover
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+
+            Label {
+                id: timerLabel
+                text: "0"
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+
+            Timer {
+                id: timer
+                interval: 10
+                running: true
+                repeat: true
+                onTriggered: timerLabel.text = (parseInt(timerLabel.text) + 1) / 100
             }
         }
     }

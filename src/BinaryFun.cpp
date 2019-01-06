@@ -2,8 +2,6 @@
 #include <QtQuick>
 #endif
 
-using std::string;
-
 #include <sailfishapp.h>
 
 int main(int argc, char *argv[])

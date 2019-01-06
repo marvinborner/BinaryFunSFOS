@@ -1,5 +1,5 @@
 Name: BinaryFun
-Summary: Binary Fun
+Summary: An awesome binary game
 Version: 0.1
 Release: 1
 # The contents of the Group field should be one of the groups listed here:
@@ -12,7 +12,7 @@ License: LICENSE
 Sources:
 - '%{name}-%{version}.tar.bz2'
 Description: |
-  Short description of my Sailfish OS Application
+  Just type the given decimal number in binary as fast as possible.
 Configure: none
 # The qtc5 builder inserts macros to allow QtCreator to have fine
 # control over qmake/make execution

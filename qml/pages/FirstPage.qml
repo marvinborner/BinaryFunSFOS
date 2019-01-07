@@ -47,7 +47,7 @@ Page {
     }
 
     function getRandom() {
-        return Math.floor(Math.random() * 16);
+        return Math.floor(Math.random() * 15) + 1;
     }
 
     function newGame() {

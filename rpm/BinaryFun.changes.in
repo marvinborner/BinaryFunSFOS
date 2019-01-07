@@ -12,7 +12,6 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
-* Sun Apr 13 2014 Jack Tar <jack.tar@example.com> 0.0.1-1
-- Scrubbed the deck
-- Hoisted the sails
+* Mon Jan 7 2019 Marvin Borner <contact@marvinborner.de> 0.1.1
+- Fixed bug with decimal zero
 

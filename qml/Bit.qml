@@ -11,6 +11,7 @@ Loader {
             width: Theme.paddingLarge * 2
             height: width
             onClicked: root.check(index)
+            Component.onCompleted: root.matrix[index] = 0
         }
     }
 
@@ -22,7 +23,15 @@ Loader {
             height: width
             horizontalAlignment: TextInput.AlignHCenter
             verticalAlignment: TextInput.AlignVCenter
-            Component.onCompleted: this.text = "0"
+            Component.onCompleted: {
+                if (index > bits) {
+                    var num = Math.floor(Math.random() * Math.pow(bits - 1, 2)) + 1;
+                    this.text = num;
+                    root.matrix[index] = num;
+                } else {
+                    this.text = "?";
+                }
+            }
         }
     }
 

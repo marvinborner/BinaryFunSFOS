@@ -26,7 +26,7 @@ ApplicationWindow {
 
                 Column {
                     property int bits: 4
-                    property var matrix: new Array(Math.pow(bits + 1, 2));
+                    property var matrix: new Array(Math.pow(bits + 1, 2))
 
                     id: root
                     width: page.width
@@ -39,6 +39,13 @@ ApplicationWindow {
 
                     function check(index) {
                         root.matrix[index] ^= 1;
+                        console.log(root.matrix);
+                        console.log(Number(root.matrix.slice(5, 9).join("")).toString());
+                        console.log(parseInt((root.matrix[9] >>> 0).toString(2)));
+
+                        if (Number(root.matrix.slice(5, 9).join("")).toString() === (root.matrix[9] >>> 0).toString(2)) {
+                            console.log("YAY");
+                        }
                     }
 
                     Grid {

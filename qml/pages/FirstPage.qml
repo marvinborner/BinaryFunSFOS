@@ -1,206 +1,62 @@
-import QtQuick 2.0
+﻿import QtQuick 2.2
 import Sailfish.Silica 1.0
+import ".."
 
-Page {
-    property var correctBinary: [];
+ApplicationWindow {
+    initialPage: pageComponent
 
-    property var pads: [
-        ["0", "0", "0", "0"],
-        ["0", "0", "0", "0"],
-        ["0", "0", "0", "0"],
-        ["0", "0", "0", "0"]
-    ];
+    Component {
+        id: pageComponent
 
-    property var correctRows: {
-        "0": false,
-        "1": false,
-        "2": false,
-        "3": false
-    }
+        Page {
+            id: page
+            allowedOrientations: Orientation.All
 
-    function check(row, index, checked) {
-        pads[row][index] = checked ? "1" : "0";
-        const typedBinary = parseInt(pads[row].join(""));
-        const neededBinary = parseInt(dec2bin(eval("rand_" + row).text));
-        const isCorrect = typedBinary === neededBinary;
-        correctRows[row.toString()] = isCorrect;
+            SilicaFlickable {
+                anchors.fill: parent
+                contentHeight: root.height
 
-        if (isCorrect) eval("rand_" + row).color = "green";
-        else eval("rand_" + row).color = "white";
-
-        console.log("Correct rows:" + JSON.stringify(correctRows));
-
-        if (Object.keys(correctRows).every(function(k){ return correctRows[k] })) {
-            gameover.text = qsTr("Yeeha!");
-            newGameBtn.visible = true;
-            timer.stop()
-        }
-        else {
-            gameover.text = "";
-            newGameBtn.visible = false;
-            timer.start()
-        }
-    }
-
-    function dec2bin(dec){
-        return parseInt((dec >>> 0).toString(2));
-    }
-
-    function getRandom() {
-        return Math.floor(Math.random() * 15) + 1;
-    }
-
-    function newGame() {
-        pageStack.push(Qt.resolvedUrl("FirstPage.qml"))
-    }
-
-    id: page
-    allowedOrientations: Orientation.All
-
-    SilicaFlickable {
-        anchors.fill: parent
-
-        PullDownMenu {
-            MenuItem {
-                text: qsTr("Leaderboard")
-                onClicked: pageStack.push(Qt.resolvedUrl("LeaderBoard.qml"))
-            }
-        }
-
-        contentHeight: column.height
-
-        Column {
-            id: column
-            width: page.width
-            spacing: Theme.paddingLarge
-            anchors.horizontalCenter: parent.horizontalCenter
-
-            PageHeader {
-                title: qsTr("Binary Fun")
-            }
-
-            Grid {
-                anchors.horizontalCenter: parent.horizontalCenter
-                columns: 5
-
-                // UGLINESS STARTS IN 3.. 2.. 1.. !
-
-                Switch {
-                    onClicked: check(0, 0, checked)
+                PullDownMenu {
+                    MenuItem {
+                        text: qsTr("Leaderboard")
+                        onClicked: pageStack.push(Qt.resolvedUrl(
+                                                      "LeaderBoard.qml"))
+                    }
                 }
 
-                Switch {
-                    onClicked: check(0, 1, checked)
+                Column {
+                    property int bits: 4
+                    property var matrix: new Array(Math.pow(bits + 1, 2));
+
+                    id: root
+                    width: page.width
+                    height: page.height
+                    spacing: Theme.paddingLarge
+
+                    PageHeader {
+                        title: "Binary Fun"
+                    }
+
+                    function check(index) {
+                        root.matrix[index] ^= 1;
+                    }
+
+                    Grid {
+                        id: grid
+                        anchors.verticalCenter: parent.verticalCenter
+                        columns: root.bits + 1
+                        rows: root.bits + 1
+                        Repeater {
+                            id: repeater
+                            model: Math.pow(root.bits + 1, 2)
+                            delegate: Bit {
+                                bits: root.bits
+                                index: modelData
+                                width: page.width / (root.bits + 1)
+                            }
+                        }
+                    }
                 }
-
-                Switch {
-                    onClicked: check(0, 2, checked)
-                }
-
-                Switch {
-                    onClicked: check(0, 3, checked)
-                }
-
-                Label {
-                    id: rand_0
-                    text: getRandom()
-                }
-
-                //
-
-                Switch {
-                    onClicked: check(1, 0, checked)
-                }
-
-                Switch {
-                    onClicked: check(1, 1, checked)
-                }
-
-                Switch {
-                    onClicked: check(1, 2, checked)
-                }
-
-                Switch {
-                    onClicked: check(1, 3, checked)
-                }
-
-                Label {
-                    id: rand_1
-                    text: getRandom()
-                }
-
-                //
-
-                Switch {
-                    onClicked: check(2, 0, checked)
-                }
-
-                Switch {
-                    onClicked: check(2, 1, checked)
-                }
-
-                Switch {
-                    onClicked: check(2, 2, checked)
-                }
-
-                Switch {
-                    onClicked: check(2, 3, checked)
-                }
-
-                Label {
-                    id: rand_2
-                    text: getRandom()
-                }
-
-                //
-
-                Switch {
-                    onClicked: check(3, 0, checked)
-                }
-
-                Switch {
-                    onClicked: check(3, 1, checked)
-                }
-
-                Switch {
-                    onClicked: check(3, 2, checked)
-                }
-
-                Switch {
-                    onClicked: check(3, 3, checked)
-                }
-
-                Label {
-                    id: rand_3
-                    text: getRandom()
-                }
-            }
-
-            Button {
-                id: newGameBtn
-                text: qsTr("Play again!")
-                visible: false
-                anchors.horizontalCenter: parent.horizontalCenter
-                onClicked: newGame()
-            }
-
-            Label {
-                id: gameover
-                anchors.horizontalCenter: parent.horizontalCenter
-            }
-
-            Label {
-                id: timerLabel
-                text: "0.0"
-                anchors.horizontalCenter: parent.horizontalCenter
-            }
-
-            Timer {
-                id: timer
-                interval: 10
-                running: true
-                repeat: true
-                onTriggered: timerLabel.text = (parseFloat(timerLabel.text) + 0.01).toFixed(2).toString()
             }
         }
     }

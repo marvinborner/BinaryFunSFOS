@@ -17,6 +17,7 @@ CONFIG += sailfishapp
 SOURCES += src/BinaryFun.cpp
 
 DISTFILES += qml/BinaryFun.qml \
+    qml/Bit.qml \
     qml/cover/CoverPage.qml \
     qml/pages/FirstPage.qml \
     rpm/BinaryFun.changes.in \

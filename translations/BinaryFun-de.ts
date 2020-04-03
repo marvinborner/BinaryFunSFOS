@@ -11,20 +11,8 @@
 <context>
     <name>FirstPage</name>
     <message>
-        <source>Yeeha!</source>
-        <translation type="unfinished">Juhuu!</translation>
-    </message>
-    <message>
         <source>Leaderboard</source>
-        <translation type="unfinished">Bestenliste</translation>
-    </message>
-    <message>
-        <source>Binary Fun</source>
-        <translation type="unfinished">Binary Fun</translation>
-    </message>
-    <message>
-        <source>Play again!</source>
-        <translation type="unfinished">Nochmal spielen!</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

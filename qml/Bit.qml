@@ -23,6 +23,7 @@ Loader {
         id: bit_index
         Label {
             id: bit_label
+            color: Theme.highlightColor
             text: parent.index.toString()
             width: Theme.paddingLarge * 2
             height: width
@@ -36,19 +37,18 @@ Loader {
                     var indices = root.matrix.slice(0, bits);
                     var transformed = [];
                     indices.forEach(function(elem) {
-                        console.log(elem + " " + pad((parseInt(elem) >>> 0).toString(2), bits));
-                        transformed.push((pad((parseInt(elem) >>> 0).toString(2), bits))[grid.row - 1]);
+                        transformed.unshift((pad((parseInt(elem) >>> 0).toString(2), bits))[grid.row - 1]);
                     });
 
                     var transformed_num = parseInt(transformed.join(""), 2);
                     this.text = transformed_num;
                     root.matrix[index] = transformed_num;
-                    console.log(indices);
-                    console.log(transformed);
-                } else {
+                } else if (index !== bits){
                     var num = Math.floor(Math.random() * (Math.pow(2, bits) - 1)) + 1;
                     this.text = num;
                     root.matrix[index] = num;
+                } else {
+                    this.text = "0/1";
                 }
             }
         }

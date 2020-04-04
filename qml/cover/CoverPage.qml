@@ -7,16 +7,4 @@ CoverBackground {
         anchors.centerIn: parent
         text: qsTr("Binary Fun")
     }
-
-    CoverActionList {
-        id: coverAction
-
-        CoverAction {
-            iconSource: "image://theme/icon-cover-next"
-        }
-
-        CoverAction {
-            iconSource: "image://theme/icon-cover-pause"
-        }
-    }
 }

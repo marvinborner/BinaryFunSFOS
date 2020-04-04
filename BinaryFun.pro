@@ -19,7 +19,8 @@ SOURCES += src/BinaryFun.cpp
 DISTFILES += qml/BinaryFun.qml \
     qml/Bit.qml \
     qml/cover/CoverPage.qml \
-    qml/pages/FirstPage.qml \
+    qml/pages/Game.qml \
+    qml/pages/Menu.qml \
     rpm/BinaryFun.changes.in \
     rpm/BinaryFun.changes.run.in \
     rpm/BinaryFun.spec \

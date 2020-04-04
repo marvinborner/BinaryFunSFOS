@@ -26,6 +26,7 @@ ApplicationWindow {
 
                 Column {
                     property int bits: 4
+                    property var correct: new Array(bits)
                     property var matrix: new Array(Math.pow(bits + 1, 2))
 
                     id: root
@@ -37,14 +38,26 @@ ApplicationWindow {
                         title: "Binary Fun"
                     }
 
+                    function nearest(number) {
+                        if (number % (bits + 1) === 0) {
+                            return number
+                        } else {
+                            return number - (number % (bits + 1))
+                        }
+                    }
+
                     function check(index) {
                         root.matrix[index] ^= 1;
-                        console.log(root.matrix);
-                        console.log(Number(root.matrix.slice(5, 9).join("")).toString());
-                        console.log(parseInt((root.matrix[9] >>> 0).toString(2)));
+                        var near = nearest(index);
 
-                        if (Number(root.matrix.slice(5, 9).join("")).toString() === (root.matrix[9] >>> 0).toString(2)) {
-                            console.log("YAY");
+                        if (Number(root.matrix.slice(near, near + bits).join("")).toString() === (root.matrix[near + bits] >>> 0).toString(2)) {
+                            correct[near / (bits + 1) - 1] = 1;
+                        } else {
+                            correct[near / (bits + 1) - 1] = 0;
+                        }
+
+                        if (correct.filter(function(i) { return i === 1 }).length === bits) {
+                            console.log("WON!!");
                         }
                     }
 

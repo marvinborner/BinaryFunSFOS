@@ -3,7 +3,9 @@ import Sailfish.Silica 1.0
 import ".."
 
 Page {
-    property int bits: 0 // gets passed by previous page
+    // Get passed by previous page
+    property int bits: 0
+    property bool help: false
 
     id: page
     allowedOrientations: Orientation.Portrait
@@ -21,6 +23,7 @@ Page {
 
         Column {
             property int bits: page.bits
+            property bool help: page.help
             property var correct: new Array(bits)
             property var matrix: new Array(Math.pow(bits + 1, 2))
             property var start_time: 0
@@ -90,7 +93,6 @@ Page {
                 id: info_label
                 text: "0 / " + root.bits
                 anchors.horizontalCenter: parent.horizontalCenter
-                // anchors.top: grid.bottom
                 anchors.bottom: page.bottom
             }
 
@@ -98,7 +100,6 @@ Page {
                 id: timer_label
                 text: "0s"
                 anchors.horizontalCenter: parent.horizontalCenter
-                // anchors.top: won.bottom
                 anchors.bottom: page.bottom
             }
 

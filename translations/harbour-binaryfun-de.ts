@@ -54,7 +54,11 @@
     </message>
     <message>
         <source>God-like (10 Bit)</source>
-        <translation type="unfinished"></translation>
+        <translation>Krass (10 Bit)</translation>
+    </message>
+    <message>
+        <source>Help bar</source>
+        <translation>Legende</translation>
     </message>
 </context>
 </TS>

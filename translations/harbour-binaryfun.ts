@@ -56,5 +56,9 @@
         <source>God-like (10 Bit)</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Help bar</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

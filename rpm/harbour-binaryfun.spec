@@ -13,11 +13,11 @@ Name:       harbour-binaryfun
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    An awesome binary game
-Version:    0.1.1
+Version:    0.2
 Release:    1
 Group:      Qt/Qt
-License:    LICENSE
-URL:        http://example.org/
+License:    MIT
+URL:        https://openrepos.net/content/melvin/binary-fun
 Source0:    %{name}-%{version}.tar.bz2
 Source100:  harbour-binaryfun.yaml
 Requires:   sailfishsilica-qt5 >= 0.10.9

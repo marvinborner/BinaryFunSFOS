@@ -14,6 +14,10 @@
         <source>Leaderboard</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Binary Fun</source>
+        <translation type="unfinished">Binary Fun</translation>
+    </message>
 </context>
 <context>
     <name>LeaderBoard</name>

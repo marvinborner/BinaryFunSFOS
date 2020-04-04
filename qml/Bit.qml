@@ -15,21 +15,40 @@ Loader {
         }
     }
 
+    function pad(n, width) {
+        return n.length >= width ? n : new Array(width - n.length + 1).join('0') + n;
+    }
+
     Component {
         id: bit_index
         Label {
+            id: bit_label
             text: parent.index.toString()
             width: Theme.paddingLarge * 2
             height: width
             horizontalAlignment: TextInput.AlignHCenter
             verticalAlignment: TextInput.AlignVCenter
             Component.onCompleted: {
+                // This code could definitely be improved ;)
                 if (index > bits) {
-                    var num = Math.floor(Math.random() * Math.pow(bits - 1, 2)) + 1;
+                    grid.row++;
+
+                    var indices = root.matrix.slice(0, bits);
+                    var transformed = [];
+                    indices.forEach(function(elem) {
+                        console.log(elem + " " + pad((parseInt(elem) >>> 0).toString(2), bits));
+                        transformed.push((pad((parseInt(elem) >>> 0).toString(2), bits))[grid.row - 1]);
+                    });
+
+                    var transformed_num = parseInt(transformed.join(""), 2);
+                    this.text = transformed_num;
+                    root.matrix[index] = transformed_num;
+                    console.log(indices);
+                    console.log(transformed);
+                } else {
+                    var num = Math.floor(Math.random() * (Math.pow(2, bits) - 1)) + 1;
                     this.text = num;
                     root.matrix[index] = num;
-                } else {
-                    this.text = "?";
                 }
             }
         }

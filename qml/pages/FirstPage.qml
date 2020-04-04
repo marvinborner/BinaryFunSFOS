@@ -19,8 +19,7 @@ ApplicationWindow {
                 PullDownMenu {
                     MenuItem {
                         text: qsTr("Leaderboard")
-                        onClicked: pageStack.push(Qt.resolvedUrl(
-                                                      "LeaderBoard.qml"))
+                        onClicked: pageStack.push(Qt.resolvedUrl("LeaderBoard.qml"))
                     }
                 }
 
@@ -35,7 +34,7 @@ ApplicationWindow {
                     spacing: Theme.paddingLarge
 
                     PageHeader {
-                        title: "Binary Fun"
+                        title: qsTr("Binary Fun")
                     }
 
                     function nearest(number) {
@@ -52,18 +51,22 @@ ApplicationWindow {
 
                         if (Number(root.matrix.slice(near, near + bits).join("")).toString() === (root.matrix[near + bits] >>> 0).toString(2)) {
                             correct[near / (bits + 1) - 1] = 1;
+                            info_label.text = parseInt(info_label.text.substr(0, info_label.text.indexOf('/'))) + 1 + " / " + root.bits;
                         } else {
                             correct[near / (bits + 1) - 1] = 0;
                         }
 
                         if (correct.filter(function(i) { return i === 1 }).length === bits) {
-                            console.log("WON!!");
+                            info_label.text = "Yeeehaa!";
+                            timer.running = false;
                         }
                     }
 
                     Grid {
+                        property int row: 0
+
                         id: grid
-                        anchors.verticalCenter: parent.verticalCenter
+                        anchors.bottom: page.bottom
                         columns: root.bits + 1
                         rows: root.bits + 1
                         Repeater {
@@ -75,6 +78,30 @@ ApplicationWindow {
                                 width: page.width / (root.bits + 1)
                             }
                         }
+                    }
+
+                    Label {
+                        id: info_label
+                        text: "0 / " + root.bits
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        // anchors.top: grid.bottom
+                        anchors.bottom: page.bottom
+                    }
+
+                    Label {
+                        id: timer_label
+                        text: "0.0"
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        // anchors.top: won.bottom
+                        anchors.bottom: page.bottom
+                    }
+
+                    Timer {
+                        id: timer
+                        interval: 1
+                        running: true
+                        repeat: true
+                        onTriggered: timer_label.text = (parseFloat(timer_label.text) + 0.01).toFixed(2).toString()
                     }
                 }
             }

@@ -1,8 +1,8 @@
 [Desktop Entry]
 Type=Application
 X-Nemo-Application-Type=silica-qt5
-Icon=BinaryFun
-Exec=BinaryFun
+Icon=harbour-binaryfun
+Exec=harbour-binaryfun
 Name=Binary Fun
 # translation example:
 # your app name in German locale (de)

@@ -6,7 +6,7 @@
 
 int main(int argc, char *argv[])
 {
-    // SailfishApp::main() will display "qml/BinaryFun.qml", if you need more
+    // SailfishApp::main() will display "qml/harbour-binaryfun.qml", if you need more
     // control over initialization, you can use:
     //
     //   - SailfishApp::application(int, char *[]) to get the QGuiApplication *

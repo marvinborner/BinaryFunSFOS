@@ -3,7 +3,7 @@ import Sailfish.Silica 1.0
 
 Page {
     id: page
-    allowedOrientations: Orientation.All
+    allowedOrientations: Orientation.Portrait
 
     SilicaFlickable {
         anchors.fill: parent
@@ -53,7 +53,7 @@ Page {
                 }
 
                 Button {
-                    text: qsTr("Godlike (10 Bit)")
+                    text: qsTr("God-like (10 Bit)")
                     onClicked: {
                         pageStack.push(Qt.resolvedUrl("Game.qml"), {bits: 10});
                     }

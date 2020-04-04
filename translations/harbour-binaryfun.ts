@@ -18,6 +18,10 @@
         <source>Play again!</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Not bad!</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>LeaderBoard</name>
@@ -49,7 +53,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Godlike (10 Bit)</source>
+        <source>God-like (10 Bit)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

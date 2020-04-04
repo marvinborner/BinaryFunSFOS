@@ -6,7 +6,7 @@ Page {
     property int bits: 0 // gets passed by previous page
 
     id: page
-    allowedOrientations: Orientation.All
+    allowedOrientations: Orientation.Portrait
 
     SilicaFlickable {
         anchors.fill: parent
@@ -47,11 +47,11 @@ Page {
                 var near = nearest(index);
                 var current_score = parseInt(info_label.text.substr(0, info_label.text.indexOf('/')))
 
-                if (Number(root.matrix.slice(near, near + bits).join("")).toString() === (root.matrix[near + bits] >>> 0).toString(2)) {
+                if (Number(root.matrix.slice(near, near + bits).join("")).toString() === (root.matrix[near + bits] >>> 0).toString(2) && timer.running) {
                     correct[near / (bits + 1) - 1] = 1;
                     info_label.text = current_score + 1 + " / " + root.bits;
                 } else {
-                    if (correct[near / (bits + 1) - 1] === 1) {
+                    if (correct[near / (bits + 1) - 1] === 1 && timer.running) {
                         info_label.text = current_score - 1 + " / " + root.bits;
                     }
 
@@ -59,10 +59,12 @@ Page {
                 }
 
                 if (correct.filter(function(i) { return i === 1 }).length === bits) {
-                    info_label.text = "Yeeehaaw!";
-                    timer_label.text = ((new Date().getTime() - start_time) / 1000) + "s - Not bad!"
-                    timer.running = false;
-                    new_game.visible = true;
+                    if (timer.running) { // aka still playing
+                        info_label.text = "Yeeehaaw!";
+                        timer_label.text = ((new Date().getTime() - start_time) / 1000) + "s - " + qsTr("Not bad!");
+                        timer.running = false;
+                        new_game.visible = true;
+                    }
                 }
             }
 

@@ -10,23 +10,23 @@
 #   - translation filenames have to be changed
 
 # The name of your application
-TARGET = BinaryFun
+TARGET = harbour-binaryfun
 
 CONFIG += sailfishapp
 
-SOURCES += src/BinaryFun.cpp
+SOURCES += src/harbour-binaryfun.cpp
 
-DISTFILES += qml/BinaryFun.qml \
+DISTFILES += qml/harbour-binaryfun.qml \
     qml/Bit.qml \
     qml/cover/CoverPage.qml \
     qml/pages/Game.qml \
     qml/pages/Menu.qml \
-    rpm/BinaryFun.changes.in \
-    rpm/BinaryFun.changes.run.in \
-    rpm/BinaryFun.spec \
-    rpm/BinaryFun.yaml \
+    rpm/harbour-binaryfun.changes.in \
+    rpm/harbour-binaryfun.changes.run.in \
+    rpm/harbour-binaryfun.spec \
+    rpm/harbour-binaryfun.yaml \
     translations/*.ts \
-    BinaryFun.desktop \
+    harbour-binaryfun.desktop \
     qml/pages/LeaderBoard.qml
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
@@ -39,4 +39,4 @@ CONFIG += sailfishapp_i18n
 # planning to localize your app, remember to comment out the
 # following TRANSLATIONS line. And also do not forget to
 # modify the localized app name in the the .desktop file.
-TRANSLATIONS += translations/BinaryFun-de.ts
+TRANSLATIONS += translations/harbour-binaryfun-de.ts

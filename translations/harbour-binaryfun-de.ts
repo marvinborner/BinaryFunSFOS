@@ -5,51 +5,55 @@
     <name>CoverPage</name>
     <message>
         <source>Binary Fun</source>
-        <translation type="unfinished">Binary Fun</translation>
+        <translation type="unfinished">Binär-Spaß</translation>
     </message>
 </context>
 <context>
     <name>Game</name>
     <message>
         <source>Binary Fun</source>
-        <translation type="unfinished">Binary Fun</translation>
+        <translation>Binär-Spaß</translation>
     </message>
     <message>
         <source>Play again!</source>
-        <translation type="unfinished"></translation>
+        <translation>Nochmal!</translation>
+    </message>
+    <message>
+        <source>Not bad!</source>
+        <translation>Nicht schlecht!</translation>
     </message>
 </context>
 <context>
     <name>LeaderBoard</name>
     <message>
         <source>Under Construction!</source>
-        <translation type="unfinished"></translation>
+        <translation>Im Aufbau!</translation>
     </message>
 </context>
 <context>
     <name>Menu</name>
     <message>
         <source>Binary Fun</source>
-        <translation type="unfinished">Binary Fun</translation>
+        <translation>Binär-Spaß</translation>
     </message>
     <message>
         <source>Easy (4 Bit)</source>
-        <translation type="unfinished"></translation>
+        <translation>Einfach (4 Bit)</translation>
     </message>
     <message>
         <source>Medium (6 Bit)</source>
-        <translation type="unfinished"></translation>
+        <translation>Mittel (6 Bit)</translation>
     </message>
     <message>
         <source>Hard (8 Bit)</source>
-        <translation type="unfinished"></translation>
+        <translation>Schwer (8 Bit)</translation>
     </message>
     <message>
         <source>Very easy (2 Bit)</source>
-        <translation type="unfinished"></translation>
+        <translation>Sehr einfach (2 Bit)</translation>
     </message>
     <message>
-        <source>Godlike (10 Bit)</source>
+        <source>God-like (10 Bit)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

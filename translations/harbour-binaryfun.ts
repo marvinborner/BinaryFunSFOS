@@ -22,11 +22,43 @@
         <source>Not bad!</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Leaderboard</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>LeaderBoard</name>
     <message>
-        <source>Under Construction!</source>
+        <source>Leaderboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Very easy (2 Bit)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Easy (4 Bit)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Medium (6 Bit)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hard (8 Bit)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>God-like (10 Bit)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please select</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No internet connection!</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -58,6 +90,10 @@
     </message>
     <message>
         <source>Help bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Leaderboard</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

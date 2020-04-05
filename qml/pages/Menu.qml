@@ -9,6 +9,13 @@ Page {
         anchors.fill: parent
         contentHeight: column.height
 
+        PullDownMenu {
+            MenuItem {
+                text: qsTr("Leaderboard")
+                onClicked: pageStack.push(Qt.resolvedUrl("LeaderBoard.qml"))
+            }
+        }
+
         Column {
             property bool bar: false
 

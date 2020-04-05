@@ -1,5 +1,6 @@
 ﻿import QtQuick 2.2
 import Sailfish.Silica 1.0
+import org.nemomobile.configuration 1.0
 import ".."
 
 Page {
@@ -14,12 +15,12 @@ Page {
         anchors.fill: parent
         contentHeight: root.height
 
-        /*PullDownMenu {
+        PullDownMenu {
             MenuItem {
                 text: qsTr("Leaderboard")
                 onClicked: pageStack.push(Qt.resolvedUrl("LeaderBoard.qml"))
             }
-        }*/
+        }
 
         Column {
             property int bits: page.bits
@@ -35,6 +36,18 @@ Page {
 
             PageHeader {
                 title: qsTr("Binary Fun")
+            }
+
+            function submit(start_time, end_time, difficulty, level) {
+                var key = "RmMwQ0ptT1FlSkpIeEdzNDB3a1B5OVk1ZE8wYkRjSzI=";
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "https://marvinborner.de/lead/binaryfun1/add", true);
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+                var query = "writeKey=" + Qt.atob(key) + "&win=true&board=default&start_time=" + start_time
+                        + "&end_time=" + end_time + "&difficulty=" + difficulty
+                        + "&level=" + level + "&cheats=" + (root.help ? "true" : "false")
+                        + "&name="+ username.value + "&mods=0" + "&time=" + (end_time - start_time);
+                xhr.send(query);
             }
 
             function nearest(number) {
@@ -63,10 +76,12 @@ Page {
 
                 if (correct.filter(function(i) { return i === 1 }).length === bits) {
                     if (timer.running) { // aka still playing
+                        var end_time = (new Date()).getTime();
                         info_label.text = "Yeeehaaw!";
-                        timer_label.text = ((new Date().getTime() - start_time) / 1000) + "s - " + qsTr("Not bad!");
+                        timer_label.text = ((end_time - start_time) / 1000) + "s - " + qsTr("Not bad!");
                         timer.running = false;
                         new_game.visible = true;
+                        submit(start_time, end_time, bits, root.matrix.join(","))
                     }
                 }
             }
@@ -123,5 +138,11 @@ Page {
                 onClicked: pageStack.replace(Qt.resolvedUrl("Game.qml"), {bits: root.bits})
             }
         }
+    }
+
+    ConfigurationValue {
+        id: username
+        key: "/com/binaryfun/username"
+        defaultValue: "anon"
     }
 }

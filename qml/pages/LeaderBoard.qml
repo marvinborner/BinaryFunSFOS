@@ -120,7 +120,7 @@ Page {
 
                 Label {
                     anchors.top: level.bottom
-                    text: ((modelData.end_time[1] - modelData.start_time[1]) / 1000) + qsTr("s - Help: ") + modelData.cheats
+                    text: (((modelData.end_time[1] - modelData.start_time[1]) / 1000) + 1.0) + qsTr("s - Help: ") + modelData.cheats
                     font.pixelSize: Theme.fontSizeExtraSmall
                 }
             }

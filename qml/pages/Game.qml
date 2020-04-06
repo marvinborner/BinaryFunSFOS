@@ -78,7 +78,7 @@ Page {
                     if (timer.running) { // aka still playing
                         var end_time = (new Date()).getTime();
                         info_label.text = "Yeeehaaw!";
-                        timer_label.text = ((end_time - start_time) / 1000) + "s - " + qsTr("Not bad!");
+                        timer_label.text = (((end_time - start_time) / 1000) + 1.0) + "s - " + qsTr("Not bad!");
                         timer.running = false;
                         new_game.visible = true;
                         submit(start_time, end_time, bits, root.matrix.join(","))
@@ -123,6 +123,7 @@ Page {
                 interval: 1000
                 running: true
                 repeat: true
+                // triggeredOnStart: true // This WOULD fix the timing bug BUT other versions are already used which would cause wrong scores...
                 onTriggered: {
                     if (root.start_time === 0)
                         root.start_time = (new Date()).getTime();

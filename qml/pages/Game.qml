@@ -132,7 +132,7 @@ Page {
 
             Button {
                 id: new_game
-                text: qsTr("Play again!")
+                text: qsTr("Play again")
                 visible: false
                 anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: pageStack.replace(Qt.resolvedUrl("Game.qml"), {bits: root.bits})

@@ -15,10 +15,6 @@
         <translation>Binär-Spaß</translation>
     </message>
     <message>
-        <source>Play again!</source>
-        <translation>Nochmal!</translation>
-    </message>
-    <message>
         <source>Not bad!</source>
         <translation>Nicht schlecht!</translation>
     </message>
@@ -26,12 +22,20 @@
         <source>Leaderboard</source>
         <translation>Bestenliste</translation>
     </message>
+    <message>
+        <source>Play again</source>
+        <translation>Nochmal spielen</translation>
+    </message>
 </context>
 <context>
     <name>LeaderBoard</name>
     <message>
         <source>Leaderboard</source>
         <translation>Bestenliste</translation>
+    </message>
+    <message>
+        <source>Please select</source>
+        <translation>Bitte auswählen</translation>
     </message>
     <message>
         <source>Very easy (2 Bit)</source>
@@ -54,12 +58,28 @@
         <translation>Krass (10 Bit)</translation>
     </message>
     <message>
-        <source>Please select</source>
-        <translation>Bitte auswählen</translation>
+        <source>Enter username (default: anon)</source>
+        <translation>Nutzername eingeben (Standard: anon)</translation>
     </message>
     <message>
-        <source>No internet connection!</source>
-        <translation>Keine Internetverbindung!</translation>
+        <source>Username</source>
+        <translation>Nutzername</translation>
+    </message>
+    <message>
+        <source>Difficulty</source>
+        <translation>Schwierigkeit</translation>
+    </message>
+    <message>
+        <source>Numbers: </source>
+        <translation>Zahlen: </translation>
+    </message>
+    <message>
+        <source>s - Help: </source>
+        <translation>s - Hilfe:</translation>
+    </message>
+    <message>
+        <source>Please try again later.</source>
+        <translation>Bitte probiere es später nochmal.</translation>
     </message>
 </context>
 <context>

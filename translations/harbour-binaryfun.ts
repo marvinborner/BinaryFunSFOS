@@ -15,10 +15,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Play again!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Not bad!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -26,11 +22,19 @@
         <source>Leaderboard</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Play again</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>LeaderBoard</name>
     <message>
         <source>Leaderboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please select</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -54,11 +58,27 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Please select</source>
+        <source>Enter username (default: anon)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>No internet connection!</source>
+        <source>Username</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Difficulty</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Numbers: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>s - Help: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please try again later.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

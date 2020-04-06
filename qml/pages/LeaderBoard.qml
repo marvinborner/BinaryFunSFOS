@@ -15,9 +15,9 @@ Page {
         }
 
         TextField {
-            placeholderText: "Enter username (default: anon)"
+            placeholderText: qsTr("Enter username (default: anon)")
             text: username.value
-            label: "Username"
+            label: qsTr("Username")
             width: page.width
             EnterKey.enabled: text.length > 0 && text.length <= 16
             EnterKey.iconSource: "image://theme/icon-m-enter-close"
@@ -29,20 +29,22 @@ Page {
 
         ComboBox {
             id: selector
-            label: "Difficulty"
+            label: qsTr("Difficulty")
 
             function select(diff) {
                 var xhr = new XMLHttpRequest()
                 xhr.open("GET",
                          "https://marvinborner.de/lead/binaryfun1/list?sort=time&order=asc&count=1000&filter=difficulty,"+diff,
-                         false)
-                xhr.send()
-                if (xhr.status !== 0) {
-                    list.model = JSON.parse(xhr.responseText);
-                    internet.visible = false;
-                } else {
-                    internet.visible = true;
+                         true)
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        list.model = JSON.parse(xhr.responseText);
+                        internet.visible = false;
+                    } else {
+                        internet.visible = true;
+                    }
                 }
+                xhr.send()
             }
 
             menu: ContextMenu {
@@ -79,7 +81,7 @@ Page {
 
         Label {
             id: internet
-            text: qsTr("No internet connection!")
+            text: qsTr("Please try again later.")
             visible: false
         }
 
@@ -90,7 +92,8 @@ Page {
             height: page.height - y
             model: []
             delegate: ListItem {
-                contentHeight: Theme.itemSizeMedium
+                id: score
+                contentHeight: Theme.itemSizeLarge
 
                 Label {
                     id: name
@@ -98,9 +101,27 @@ Page {
                 }
 
                 Label {
+                    id: level
                     anchors.top: name.bottom
-                    text: ((modelData.end_time[1] - modelData.start_time[1]) / 1000) + "s - Help: " + modelData.cheats
-                    font.pixelSize: Theme.fontSizeSmall
+                    text: {
+                        var numbers = modelData.level.split(",").slice(
+                              modelData.difficulty).filter(function (_, i) {
+                                  return i % (modelData.difficulty + 1) === 0.
+                              }).slice(1);
+                        if (numbers.length !== modelData.difficulty && modelData.difficulty !== 10) {
+                            console.log("Tempered: " + numbers.length + " " + modelData.difficulty);
+                            score.visible = false;
+                        }
+
+                        return qsTr("Numbers: ") + numbers.join(", ");
+                    }
+                    font.pixelSize: Theme.fontSizeExtraSmall
+                }
+
+                Label {
+                    anchors.top: level.bottom
+                    text: ((modelData.end_time[1] - modelData.start_time[1]) / 1000) + qsTr("s - Help: ") + modelData.cheats
+                    font.pixelSize: Theme.fontSizeExtraSmall
                 }
             }
         }

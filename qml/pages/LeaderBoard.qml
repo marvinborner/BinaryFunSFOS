@@ -41,6 +41,7 @@ Page {
                         list.model = JSON.parse(xhr.responseText);
                         internet.visible = false;
                     } else {
+                        list.model = []
                         internet.visible = true;
                     }
                 }
@@ -85,9 +86,10 @@ Page {
             visible: false
         }
 
-        ListView {
+        SilicaListView {
             id: list
             clip: true
+            quickScroll: true
             width: page.width
             height: page.height - y
             model: []
@@ -120,7 +122,7 @@ Page {
 
                 Label {
                     anchors.top: level.bottom
-                    text: (((modelData.end_time[1] - modelData.start_time[1]) / 1000) + 1.0) + qsTr("s - Help: ") + modelData.cheats
+                    text: (((modelData.end_time[1] - modelData.start_time[1]) / 1000) + 1.0).toFixed(3) + qsTr("s - Help: ") + modelData.cheats
                     font.pixelSize: Theme.fontSizeExtraSmall
                 }
             }

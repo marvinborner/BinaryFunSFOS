@@ -78,7 +78,7 @@ Page {
                     if (timer.running) { // aka still playing
                         var end_time = (new Date()).getTime();
                         info_label.text = "Yeeehaaw!";
-                        timer_label.text = (((end_time - start_time) / 1000) + 1.0) + "s - " + qsTr("Not bad!");
+                        timer_label.text = (((end_time - start_time) / 1000) + 1.0).toFixed(3) + "s - " + qsTr("Not bad!");
                         timer.running = false;
                         new_game.visible = true;
                         submit(start_time, end_time, bits, root.matrix.join(","))

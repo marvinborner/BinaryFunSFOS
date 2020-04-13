@@ -17,6 +17,7 @@ CONFIG += sailfishapp
 SOURCES += src/harbour-binaryfun.cpp
 
 DISTFILES += qml/harbour-binaryfun.qml \
+    ../harbour-sailchess/qml/Functions.qml \
     qml/Bit.qml \
     qml/cover/CoverPage.qml \
     qml/pages/Game.qml \

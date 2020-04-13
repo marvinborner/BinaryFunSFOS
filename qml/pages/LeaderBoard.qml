@@ -1,6 +1,6 @@
 import QtQuick 2.2
 import Sailfish.Silica 1.0
-import org.nemomobile.configuration 1.0
+import Nemo.Configuration 1.0
 
 Page {
     id: page
@@ -40,7 +40,7 @@ Page {
                     if (xhr.readyState === 4 && xhr.status === 200) {
                         list.model = JSON.parse(xhr.responseText);
                         internet.visible = false;
-                    } else {
+                    } else if (xhr.readyState === 4) {
                         list.model = []
                         internet.visible = true;
                     }

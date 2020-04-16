@@ -40,12 +40,15 @@ Page {
                     if (xhr.readyState === 4 && xhr.status === 200) {
                         list.model = JSON.parse(xhr.responseText);
                         internet.visible = false;
+                        loading.running = false;
                     } else if (xhr.readyState === 4) {
-                        list.model = []
                         internet.visible = true;
+                        loading.running = false;
                     }
                 }
                 xhr.send()
+                list.model = [];
+                loading.running = true;
             }
 
             menu: ContextMenu {
@@ -84,6 +87,14 @@ Page {
             id: internet
             text: qsTr("Please try again later.")
             visible: false
+        }
+
+        BusyIndicator {
+            id: loading
+            size: BusyIndicatorSize.Large
+            anchors.horizontalCenter: parent.horizontalCenter
+            running: false
+            visible: running
         }
 
         SilicaListView {

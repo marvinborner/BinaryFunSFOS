@@ -13,8 +13,8 @@ Name:       harbour-binaryfun
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    An awesome binary game
-Version:    1.1.1
-Release:    2
+Version:    1.2.0
+Release:    1
 Group:      Qt/Qt
 License:    MIT
 URL:        https://openrepos.net/content/melvin/binary-fun

@@ -38,7 +38,11 @@ Page {
                          true)
                 xhr.onreadystatechange = function() {
                     if (xhr.readyState === 4 && xhr.status === 200) {
-                        list.model = JSON.parse(xhr.responseText);
+                        list.model = JSON.parse(xhr.responseText).sort(function(a, b){
+                            const time_a = ((a.end_time[1] - a.start_time[1]) / 1000) + (a.mods === "0" ? 1.0 : 0)
+                            const time_b = ((b.end_time[1] - b.start_time[1]) / 1000) + (b.mods === "0" ? 1.0 : 0)
+                            return time_a - time_b;
+                        });;
                         internet.visible = false;
                         loading.running = false;
                     } else if (xhr.readyState === 4) {
@@ -133,8 +137,11 @@ Page {
 
                 Label {
                     anchors.top: level.bottom
-                    text: (((modelData.end_time[1] - modelData.start_time[1]) / 1000) + 1.0).toFixed(3) + qsTr("s - Help: ") + modelData.cheats
+                    text: (((modelData.end_time[1] - modelData.start_time[1]) / 1000) + (modelData.mods === "0" ? 1.0 : 0)).toFixed(3) + qsTr("s - Help: ") + modelData.cheats
                     font.pixelSize: Theme.fontSizeExtraSmall
+                    Component.onCompleted: {
+                        console.log(modelData.mods);
+                    }
                 }
             }
         }

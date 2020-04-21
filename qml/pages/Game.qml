@@ -46,7 +46,7 @@ Page {
                 var query = "writeKey=" + Qt.atob(key) + "&win=true&board=default&start_time=" + start_time
                         + "&end_time=" + end_time + "&difficulty=" + difficulty
                         + "&level=" + level + "&cheats=" + (root.help ? "true" : "false")
-                        + "&name="+ username.value + "&mods=0" + "&time=" + (end_time - start_time);
+                        + "&name="+ username.value + "&mods=1" + "&time=" + (end_time - start_time);
                 xhr.send(query);
             }
 
@@ -78,7 +78,7 @@ Page {
                     if (timer.running) { // aka still playing
                         var end_time = (new Date()).getTime();
                         info_label.text = "Yeeehaaw!";
-                        timer_label.text = (((end_time - start_time) / 1000) + 1.0).toFixed(3) + "s - " + qsTr("Not bad!");
+                        timer_label.text = (((end_time - start_time) / 1000)).toFixed(3) + "s - " + qsTr("Not bad!");
                         timer.running = false;
                         new_game.visible = true;
                         submit(start_time, end_time, bits, root.matrix.join(","))
@@ -123,11 +123,11 @@ Page {
                 interval: 1000
                 running: true
                 repeat: true
-                // triggeredOnStart: true // This WOULD fix the timing bug BUT other versions are already used which would cause wrong scores...
+                triggeredOnStart: true
                 onTriggered: {
                     if (root.start_time === 0)
                         root.start_time = (new Date()).getTime();
-                    timer_label.text = parseInt(timer_label.text.substr(0, timer_label.text.indexOf('s'))) + 1 + "s";
+                    timer_label.text = parseInt(timer_label.text.substr(0, timer_label.text.indexOf('s'))) + "s";
                 }
             }
 

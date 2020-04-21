@@ -1,0 +1,30 @@
+<p>v0.1</p>
+<p>- Initial release</p>
+<br>
+<p>v0.1.1</p>
+<p>- Fixed bug with random zeros</p>
+<br>
+<p>v0.2</p>
+<p>- Multiple modes and difficulties (bit-size based)</p>
+<p>- Way better interface and compatibility for large grids</p>
+<p>- Renamed package to harbour-compatible name (sorry for not doing that the first time!)</p>
+<p>- Help bar/legend showing the powers of two</p>
+<br>
+<p>v1.0</p>
+<p>- Added online leaderboard!</p>
+<p>- Main feature development will stop here</p>
+<br>
+<p>v1.1</p>
+<p>- Improved xhr speed (async)</p>
+<p>- Added more information to the leaderboard</p>
+<p>- Added basic cheat detection (I hope you're loyal though)</p>
+<br>
+<p>v1.1.1</p>
+<p>- Fixed bug causing all scores to be 1 second off</p>
+<p>- Fixed floating errors</p>
+<p>- Enabled quickscroll</p>
+<br>
+<p>v1.2.0</p>
+<p>- Fixed floating errors</p>
+<p>- Added loading animation</p>
+<p>- Fixed readystate confusion</p>

@@ -12,19 +12,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The challenge of this game is to type a given decimal number in binary as fast as possible. You can also compete with people from all over the world via the leaderboard which is accessible from the pulley menu.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>1. None: No helping bar and no process indicator. Play this together with the god-like mode and you&apos;ll get frustrated very quickly!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>2. Counter: Adds a process indicator/counter showing you how many lines you&apos;ve got right.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>3. Bar: Replaces the top bar/line with a helping numbers, showing you the decimal representation of the corresponding bit.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -37,11 +29,19 @@ There are also serveral help modes available:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>All in all, I think that Binary Fun turned out great and I play it myself everyday while travelling with the train. Thanks you for playing too and I hope you learn to love the binary system as much as I do :)</source>
+        <source>The challenge of this game is to type a given decimal number in binary as fast as possible. You can also compete with people from all over the world via the leaderboard which is accessible from the pulley menu. Binary Fun is not only a game you can play while you&apos;re bored, but also a game which can help enhance your mathematical skills!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source> and check Warehouse for updates. This app is completely written by melvin/marvinborner. If you like it, please consider making a small donation, I would really appreciate it!</source>
+        <source>3. Bar: Replaces the top bar/line with helping numbers, showing you the decimal representation of the corresponding bit.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All in all, I think that Binary Fun turned out great and I play it myself everyday while travelling with the train. Thank you for playing and I hope you learn to love the binary system as much as I do :)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> or GitHub and check for updates now and then. This app is completely written by melvin/marvinborner. If you like it, please consider making a small donation, I would really appreciate it!</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -29,7 +29,7 @@ Page {
             }
             Label {
                 width: parent.width
-                text: qsTr("The challenge of this game is to type a given decimal number in binary as fast as possible. You can also compete with people from all over the world via the leaderboard which is accessible from the pulley menu.")
+                text: qsTr("The challenge of this game is to type a given decimal number in binary as fast as possible. You can also compete with people from all over the world via the leaderboard which is accessible from the pulley menu. Binary Fun is not only a game you can play while you're bored, but also a game which can help enhance your mathematical skills!")
                 color: Theme.secondaryColor
                 font.pixelSize: Theme.fontSizeSmall
                 horizontalAlignment: Text.AlignJustify
@@ -62,7 +62,7 @@ Page {
             }
             Label {
                 width: parent.width
-                text: qsTr("3. Bar: Replaces the top bar/line with a helping numbers, showing you the decimal representation of the corresponding bit.")
+                text: qsTr("3. Bar: Replaces the top bar/line with helping numbers, showing you the decimal representation of the corresponding bit.")
                 color: Theme.secondaryColor
                 font.pixelSize: Theme.fontSizeSmall
                 horizontalAlignment: Text.AlignJustify
@@ -78,7 +78,7 @@ Page {
             }
             Label {
                 width: parent.width
-                text: qsTr("All in all, I think that Binary Fun turned out great and I play it myself everyday while travelling with the train. Thanks you for playing too and I hope you learn to love the binary system as much as I do :)")
+                text: qsTr("All in all, I think that Binary Fun turned out great and I play it myself everyday while travelling with the train. Thank you for playing and I hope you learn to love the binary system as much as I do :)")
                 color: Theme.secondaryColor
                 font.pixelSize: Theme.fontSizeSmall
                 horizontalAlignment: Text.AlignJustify
@@ -93,7 +93,7 @@ Page {
                     text: "<style>a:link { color: " + Theme.highlightColor + "; }</style>" + qsTr(
                               "Follow the development on ")
                           + "<a href=https://openrepos.net/content/melvin/binary-fun>OpenRepos.net</a>" + qsTr(
-                              " and check Warehouse for updates. This app is completely written by melvin/marvinborner. If you like it, please consider making a small donation, I would really appreciate it!")
+                              " or GitHub and check for updates now and then. This app is completely written by melvin/marvinborner. If you like it, please consider making a small donation, I would really appreciate it!")
                     color: Theme.secondaryColor
                     font.pixelSize: Theme.fontSizeSmall - 6
                     horizontalAlignment: Text.AlignJustify

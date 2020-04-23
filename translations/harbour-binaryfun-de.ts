@@ -34,6 +34,18 @@
         <translation>Bestenliste</translation>
     </message>
     <message>
+        <source>Enter username (default: anon)</source>
+        <translation>Nutzername eingeben (standard: anon)</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Nutzername</translation>
+    </message>
+    <message>
+        <source>Difficulty</source>
+        <translation>Schwierigkeit</translation>
+    </message>
+    <message>
         <source>Please select</source>
         <translation>Bitte auswählen</translation>
     </message>
@@ -58,16 +70,8 @@
         <translation>Krass (10 Bit)</translation>
     </message>
     <message>
-        <source>Enter username (default: anon)</source>
-        <translation>Nutzername eingeben (Standard: anon)</translation>
-    </message>
-    <message>
-        <source>Username</source>
-        <translation>Nutzername</translation>
-    </message>
-    <message>
-        <source>Difficulty</source>
-        <translation>Schwierigkeit</translation>
+        <source>Please try again later.</source>
+        <translation>Bitte probiere es später erneut.</translation>
     </message>
     <message>
         <source>Numbers: </source>
@@ -75,11 +79,7 @@
     </message>
     <message>
         <source>s - Help: </source>
-        <translation>s - Hilfe:</translation>
-    </message>
-    <message>
-        <source>Please try again later.</source>
-        <translation>Bitte probiere es später nochmal.</translation>
+        <translation>s- Hilfe:</translation>
     </message>
 </context>
 <context>
@@ -109,12 +109,28 @@
         <translation>Krass (10 Bit)</translation>
     </message>
     <message>
-        <source>Help bar</source>
-        <translation>Hilfs-Legende</translation>
-    </message>
-    <message>
         <source>Leaderboard</source>
         <translation>Bestenliste</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Hilfe</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Keine</translation>
+    </message>
+    <message>
+        <source>Counter</source>
+        <translation>Zähler</translation>
+    </message>
+    <message>
+        <source>Bar</source>
+        <translation>Leiste</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Beides</translation>
     </message>
 </context>
 </TS>

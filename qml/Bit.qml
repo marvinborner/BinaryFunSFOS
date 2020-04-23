@@ -49,7 +49,7 @@ Loader {
                     }
                 } else if (index !== bits){
                     var num = Math.floor(Math.random() * (Math.pow(2, bits) - 1)) + 1;
-                    this.text = root.help ? (Math.pow(2, bits - index - 1)) : num;
+                    this.text = root.help > 1 ? (Math.pow(2, bits - index - 1)) : num;
                     root.matrix[index] = num;
                 } else {
                     this.text = "0/1";

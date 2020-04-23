@@ -3,6 +3,8 @@ import Sailfish.Silica 1.0
 import Nemo.Configuration 1.0
 
 Page {
+    property var modes: []
+
     id: page
     allowedOrientations: Orientation.Portrait
 
@@ -137,11 +139,12 @@ Page {
 
                 Label {
                     anchors.top: level.bottom
-                    text: (((modelData.end_time[1] - modelData.start_time[1]) / 1000) + (modelData.mods === "0" ? 1.0 : 0)).toFixed(3) + qsTr("s - Help: ") + modelData.cheats
-                    font.pixelSize: Theme.fontSizeExtraSmall
-                    Component.onCompleted: {
-                        console.log(modelData.mods);
+                    text: {
+                        const time = (((modelData.end_time[1] - modelData.start_time[1]) / 1000) + (modelData.mods === "0" ? 1.0 : 0)).toFixed(3);
+                        const help = modelData.cheats === "true" ? 3 : (modelData.cheats === "false" ? 1 : parseInt(modelData.cheats));
+                        return time + qsTr("s - Help: ") + page.modes[help];
                     }
+                    font.pixelSize: Theme.fontSizeExtraSmall
                 }
             }
         }

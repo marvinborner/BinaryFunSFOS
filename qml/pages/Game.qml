@@ -6,7 +6,8 @@ import ".."
 Page {
     // Get passed by previous page
     property int bits: 0
-    property bool help: false
+    property var help: 0
+    property var modes: []
 
     id: page
     allowedOrientations: Orientation.Portrait
@@ -18,13 +19,14 @@ Page {
         PullDownMenu {
             MenuItem {
                 text: qsTr("Leaderboard")
-                onClicked: pageStack.push(Qt.resolvedUrl("LeaderBoard.qml"))
+                onClicked: pageStack.push(Qt.resolvedUrl("LeaderBoard.qml"), {modes: root.help_modes})
             }
         }
 
         Column {
             property int bits: page.bits
-            property bool help: page.help
+            property var help: page.help
+            property var help_modes: page.modes
             property var correct: new Array(bits)
             property var matrix: new Array(Math.pow(bits + 1, 2))
             property var start_time: 0
@@ -45,7 +47,7 @@ Page {
                 xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
                 var query = "writeKey=" + Qt.atob(key) + "&win=true&board=default&start_time=" + start_time
                         + "&end_time=" + end_time + "&difficulty=" + difficulty
-                        + "&level=" + level + "&cheats=" + (root.help ? "true" : "false")
+                        + "&level=" + level + "&cheats=" + root.help
                         + "&name="+ username.value + "&mods=1" + "&time=" + (end_time - start_time);
                 xhr.send(query);
             }
@@ -107,13 +109,14 @@ Page {
             Label {
                 id: info_label
                 text: "0 / " + root.bits
+                visible: root.help === 1 || root.help === 3
                 anchors.horizontalCenter: parent.horizontalCenter
                 anchors.bottom: page.bottom
             }
 
             Label {
                 id: timer_label
-                text: "0s"
+                text: "-1s"
                 anchors.horizontalCenter: parent.horizontalCenter
                 anchors.bottom: page.bottom
             }
@@ -127,7 +130,7 @@ Page {
                 onTriggered: {
                     if (root.start_time === 0)
                         root.start_time = (new Date()).getTime();
-                    timer_label.text = parseInt(timer_label.text.substr(0, timer_label.text.indexOf('s'))) + "s";
+                    timer_label.text = parseInt(timer_label.text.substr(0, timer_label.text.indexOf('s'))) + 1 + "s";
                 }
             }
 

@@ -34,6 +34,18 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Enter username (default: anon)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Difficulty</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Please select</source>
         <translation type="unfinished"></translation>
     </message>
@@ -58,15 +70,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Enter username (default: anon)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Username</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Difficulty</source>
+        <source>Please try again later.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -75,10 +79,6 @@
     </message>
     <message>
         <source>s - Help: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Please try again later.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -109,11 +109,27 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Help bar</source>
+        <source>Leaderboard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Leaderboard</source>
+        <source>Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Counter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Both</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

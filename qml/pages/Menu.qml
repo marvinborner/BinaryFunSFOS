@@ -11,6 +11,10 @@ Page {
 
         PullDownMenu {
             MenuItem {
+                text: qsTr("About")
+                onClicked: pageStack.push(Qt.resolvedUrl("About.qml"))
+            }
+            MenuItem {
                 text: qsTr("Leaderboard")
                 onClicked: pageStack.push(Qt.resolvedUrl("LeaderBoard.qml"), {modes: menu.help_modes})
             }

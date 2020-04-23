@@ -20,6 +20,7 @@ DISTFILES += qml/harbour-binaryfun.qml \
     ../harbour-sailchess/qml/Functions.qml \
     qml/Bit.qml \
     qml/cover/CoverPage.qml \
+    qml/pages/About.qml \
     qml/pages/Game.qml \
     qml/pages/Menu.qml \
     rpm/harbour-binaryfun.changes.in \
